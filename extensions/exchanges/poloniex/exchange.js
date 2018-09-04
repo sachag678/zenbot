@@ -60,11 +60,19 @@ module.exports = function container (conf) {
       }
       if (args.start && !args.end) {
         // add 12 hours
+<<<<<<< HEAD
         args.end = args.start + (opts.offset || this.offset)
       }
       else if (args.end && !args.start) {
         // subtract 12 hours
         args.start = args.end - (opts.offset || this.offset)
+=======
+        args.end = args.start + opts.offset
+      }
+      else if (args.end && !args.start) {
+        // subtract 12 hours
+        args.start = args.end - opts.offset
+>>>>>>> ef32e9f88e9a8f45dd9feafe42c02898cb1a9422
       }
 
       client._public('returnTradeHistory', args, function (err, body) {
